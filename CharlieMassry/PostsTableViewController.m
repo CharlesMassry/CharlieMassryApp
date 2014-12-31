@@ -8,6 +8,7 @@
 
 #import "PostsTableViewController.h"
 #import "PostViewController.h"
+#import "Post.h"
 
 @interface PostsTableViewController ()
 
@@ -47,7 +48,20 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Blog";
-        self.posts = @[@"iOS",@"Javascript",@"Ruby"];
+        
+        Post *post1 = [[Post alloc] init];
+        post1.heading = @"iOS";
+        post1.text = @"iPhone Development with Objective-C";
+        
+        Post *post2 = [[Post alloc] init];
+        post2.heading = @"Javascript";
+        post2.text = @"FED with Javascript";
+        
+        Post *post3 = [[Post alloc] init];
+        post3.heading = @"Ruby";
+        post3.text = @"Ruby On Rails BED";
+        
+        self.posts = [NSArray arrayWithObjects:post1, post2, post3, nil];
     }
     return self;
 }
@@ -57,7 +71,8 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        cell.textLabel.text = self.posts[indexPath.row];
+        Post *post = self.posts[indexPath.row];
+        cell.textLabel.text = post.heading;
     }
     
     // Configure the cell...
@@ -68,7 +83,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PostViewController *postVC = [[PostViewController alloc] init];
-    postVC.text = self.posts[indexPath.row];
+    postVC.post = self.posts[indexPath.row];
     [self.navigationController pushViewController:postVC animated:YES];
 }
 

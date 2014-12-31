@@ -26,10 +26,15 @@
 //        NSLog(@"Error: %@", error);
 //    }];
     PostsTableViewController *postsTableViewController = [[PostsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+//    postsTableViewController.title = @"Blog";
+    
+//    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+//    [tabBarController setViewControllers:@[postsTableViewController]];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:postsTableViewController];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navController;
+//    [self.window addSubview:tabBarController];
     [self.window makeKeyAndVisible];
     
     return YES;

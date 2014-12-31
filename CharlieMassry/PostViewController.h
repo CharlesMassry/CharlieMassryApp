@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
 
 @interface PostViewController : UIViewController
-@property(strong, nonatomic)NSString *text;
+@property(strong, nonatomic)Post *post;
 @end

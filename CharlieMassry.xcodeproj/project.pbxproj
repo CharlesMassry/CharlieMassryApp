@@ -33,6 +33,7 @@
 		3534B19D1A4F65770058C09B /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3534B18A1A4F65770058C09B /* UIProgressView+AFNetworking.m */; };
 		3534B19E1A4F65770058C09B /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3534B18C1A4F65770058C09B /* UIRefreshControl+AFNetworking.m */; };
 		3534B19F1A4F65770058C09B /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3534B18E1A4F65770058C09B /* UIWebView+AFNetworking.m */; };
+		353A84921A538D7C00668DD6 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A84911A538D7C00668DD6 /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		3534B18C1A4F65770058C09B /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		3534B18D1A4F65770058C09B /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		3534B18E1A4F65770058C09B /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		353A84901A538D7C00668DD6 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		353A84911A538D7C00668DD6 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				3534B1481A4F65460058C09B /* AppDelegate.m */,
 				35340B4A1A521F390021D27E /* PostsTableViewController.h */,
 				35340B4B1A521F390021D27E /* PostsTableViewController.m */,
+				353A84901A538D7C00668DD6 /* Post.h */,
+				353A84911A538D7C00668DD6 /* Post.m */,
 				35340B4D1A5222290021D27E /* PostViewController.h */,
 				35340B4E1A5222290021D27E /* PostViewController.m */,
 				3534B14A1A4F65460058C09B /* ViewController.h */,
@@ -349,6 +354,7 @@
 				3534B1931A4F65770058C09B /* AFSecurityPolicy.m in Sources */,
 				3534B19E1A4F65770058C09B /* UIRefreshControl+AFNetworking.m in Sources */,
 				3534B19F1A4F65770058C09B /* UIWebView+AFNetworking.m in Sources */,
+				353A84921A538D7C00668DD6 /* Post.m in Sources */,
 				3534B1911A4F65770058C09B /* AFHTTPSessionManager.m in Sources */,
 				3534B19A1A4F65770058C09B /* UIAlertView+AFNetworking.m in Sources */,
 				3534B1951A4F65770058C09B /* AFURLRequestSerialization.m in Sources */,
