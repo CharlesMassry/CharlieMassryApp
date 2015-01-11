@@ -11,4 +11,5 @@
 @interface Post : NSObject
 @property(strong, nonatomic)NSString *heading;
 @property(strong, nonatomic)NSString *text;
+-(id)initWithDictionary:(NSDictionary *)aJSON;
 @end

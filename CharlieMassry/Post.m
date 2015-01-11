@@ -7,7 +7,20 @@
 //
 
 #import "Post.h"
+#import "AFNetworking.h"
 
 @implementation Post
+-(id)init
+{
+    self = [super init];
+    return self;
+}
 
+-(id)initWithDictionary:(NSDictionary *)aJSON
+{
+    self = [super init];
+    self.heading = aJSON[@"title"];
+    self.text = aJSON[@"text"];
+    return self;
+}
 @end

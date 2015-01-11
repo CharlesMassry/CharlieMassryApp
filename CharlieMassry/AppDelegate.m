@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "AFNetworking.h"
 #import "PostsTableViewController.h"
 
 @interface AppDelegate ()
@@ -19,12 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    [manager GET:@"http://charliemassry.com/posts.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"JSON: %@", responseObject);
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"Error: %@", error);
-//    }];
+
     PostsTableViewController *postsTableViewController = [[PostsTableViewController alloc] initWithStyle:UITableViewStylePlain];
 //    postsTableViewController.title = @"Blog";
     
