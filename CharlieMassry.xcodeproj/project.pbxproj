@@ -34,6 +34,8 @@
 		3534B19E1A4F65770058C09B /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3534B18C1A4F65770058C09B /* UIRefreshControl+AFNetworking.m */; };
 		3534B19F1A4F65770058C09B /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3534B18E1A4F65770058C09B /* UIWebView+AFNetworking.m */; };
 		353A84921A538D7C00668DD6 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A84911A538D7C00668DD6 /* Post.m */; };
+		35C4B7661A73278900F50AF2 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C4B7651A73278900F50AF2 /* Comment.m */; };
+		35CF46091A6CB6DC0032C26E /* PostClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CF46081A6CB6DC0032C26E /* PostClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,10 @@
 		3534B18E1A4F65770058C09B /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		353A84901A538D7C00668DD6 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		353A84911A538D7C00668DD6 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		35C4B7641A73278900F50AF2 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		35C4B7651A73278900F50AF2 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		35CF46071A6CB6DC0032C26E /* PostClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostClient.h; sourceTree = "<group>"; };
+		35CF46081A6CB6DC0032C26E /* PostClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,16 +151,11 @@
 		3534B1421A4F65460058C09B /* CharlieMassry */ = {
 			isa = PBXGroup;
 			children = (
+				3558B4811A733D62000AAE5D /* APIs */,
+				3558B47F1A733D35000AAE5D /* Controllers */,
+				3558B47E1A733D23000AAE5D /* Models */,
 				3534B1471A4F65460058C09B /* AppDelegate.h */,
 				3534B1481A4F65460058C09B /* AppDelegate.m */,
-				35340B4A1A521F390021D27E /* PostsTableViewController.h */,
-				35340B4B1A521F390021D27E /* PostsTableViewController.m */,
-				353A84901A538D7C00668DD6 /* Post.h */,
-				353A84911A538D7C00668DD6 /* Post.m */,
-				35340B4D1A5222290021D27E /* PostViewController.h */,
-				35340B4E1A5222290021D27E /* PostViewController.m */,
-				3534B14A1A4F65460058C09B /* ViewController.h */,
-				3534B14B1A4F65460058C09B /* ViewController.m */,
 				3534B14D1A4F65460058C09B /* Main.storyboard */,
 				3534B1501A4F65460058C09B /* Images.xcassets */,
 				3534B1521A4F65460058C09B /* LaunchScreen.xib */,
@@ -237,6 +238,39 @@
 				3534B18E1A4F65770058C09B /* UIWebView+AFNetworking.m */,
 			);
 			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		3558B47E1A733D23000AAE5D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				353A84901A538D7C00668DD6 /* Post.h */,
+				353A84911A538D7C00668DD6 /* Post.m */,
+				35C4B7641A73278900F50AF2 /* Comment.h */,
+				35C4B7651A73278900F50AF2 /* Comment.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3558B47F1A733D35000AAE5D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3534B14A1A4F65460058C09B /* ViewController.h */,
+				3534B14B1A4F65460058C09B /* ViewController.m */,
+				35340B4A1A521F390021D27E /* PostsTableViewController.h */,
+				35340B4B1A521F390021D27E /* PostsTableViewController.m */,
+				35340B4D1A5222290021D27E /* PostViewController.h */,
+				35340B4E1A5222290021D27E /* PostViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3558B4811A733D62000AAE5D /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				35CF46071A6CB6DC0032C26E /* PostClient.h */,
+				35CF46081A6CB6DC0032C26E /* PostClient.m */,
+			);
+			name = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +386,7 @@
 				3534B19B1A4F65770058C09B /* UIButton+AFNetworking.m in Sources */,
 				3534B1991A4F65770058C09B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3534B1931A4F65770058C09B /* AFSecurityPolicy.m in Sources */,
+				35C4B7661A73278900F50AF2 /* Comment.m in Sources */,
 				3534B19E1A4F65770058C09B /* UIRefreshControl+AFNetworking.m in Sources */,
 				3534B19F1A4F65770058C09B /* UIWebView+AFNetworking.m in Sources */,
 				353A84921A538D7C00668DD6 /* Post.m in Sources */,
@@ -359,6 +394,7 @@
 				3534B19A1A4F65770058C09B /* UIAlertView+AFNetworking.m in Sources */,
 				3534B1951A4F65770058C09B /* AFURLRequestSerialization.m in Sources */,
 				3534B1981A4F65770058C09B /* AFNetworkActivityIndicatorManager.m in Sources */,
+				35CF46091A6CB6DC0032C26E /* PostClient.m in Sources */,
 				3534B1971A4F65770058C09B /* AFURLSessionManager.m in Sources */,
 				3534B1491A4F65460058C09B /* AppDelegate.m in Sources */,
 				3534B1461A4F65460058C09B /* main.m in Sources */,

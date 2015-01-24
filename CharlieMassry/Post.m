@@ -21,6 +21,10 @@
     self = [super init];
     self.heading = aJSON[@"title"];
     self.text = aJSON[@"text"];
+    self.idNo = aJSON[@"id"];
     return self;
+}
+-(NSString *)description {
+    return self.heading;
 }
 @end

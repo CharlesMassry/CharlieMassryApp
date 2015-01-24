@@ -9,7 +9,7 @@
 #import "PostsTableViewController.h"
 #import "PostViewController.h"
 #import "Post.h"
-#import "AFNetworking.h"
+#import "PostClient.h"
 
 @interface PostsTableViewController ()
 
@@ -19,24 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [PostClient getPostIndex];
+    [[NSNotificationCenter defaultCenter]
+        addObserver:self
+           selector:@selector(dataRetrieved:)
+               name:@"initWithJSONFinishedLoading"
+             object:self.posts];
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://charliemassry.com/posts.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
-        
-        NSMutableArray *tmpPosts = [[NSMutableArray alloc] init];
-        for (NSDictionary *tmpDictionary in JSON) {
-            
-            Post *tmpPost = [[Post alloc] initWithDictionary:tmpDictionary];
-            [tmpPosts addObject:tmpPost];
-        }
-        self.posts = [[NSArray alloc]initWithArray:tmpPosts];
-        [self.tableView reloadData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-   
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -74,11 +64,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        cell.textLabel.text = [self.posts[indexPath.row] heading];
+
+        
     }
+    cell.textLabel.text = [self.posts[indexPath.row] heading];
     // Configure the cell...
     return cell;
 }
@@ -90,9 +81,10 @@
     [self.navigationController pushViewController:postVC animated:YES];
 }
 
--(void)dataRetrieved
+-(void)dataRetrieved:(NSNotification *)retrievedPosts;
 {
-    NSLog(@"%@", self.posts);
+    self.posts = [retrievedPosts object];
+    [self.tableView reloadData];
 }
 
 /*
