@@ -17,7 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = self.post.heading;
+    self.title = self.post.title;
+    
+    [[NSNotificationCenter defaultCenter]
+        addObserver:self
+           selector:@selector(dataRetrieved:)
+               name:@"initWithPostShowJSONFinishedLoading"
+             object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,9 +35,16 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        self.view.backgroundColor = [UIColor whiteColor];
     }
     return self;
+}
+
+-(void)dataRetrieved:(NSNotification *)retrievedPost;
+{
+    self.post = [retrievedPost object];
+    NSLog(@"%@", self.post);
+    [self.view setNeedsDisplay];
 }
 
 /*

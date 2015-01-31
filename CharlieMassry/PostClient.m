@@ -10,33 +10,43 @@
 #import "AFNetworking.h"
 #import "Post.h"
 
-#define PostURL @"http://www.charliemassry.com/posts";
+NSString *const postURL = @"http://www.charliemassry.com/posts";
 
 @implementation PostClient
--(id)init
-{
-    self = [super init];
-   
-    
- return self;
- }
-
-+(void)getPostIndex
-{
-    NSString *postURL = PostURL;
++(void)getPostIndex {
+    NSString *postIndexURL = [postURL stringByAppendingString:@".json"];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:[postURL stringByAppendingString:@".json"] parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+    [manager GET:postIndexURL parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         NSMutableArray *tmpPosts = [[NSMutableArray alloc] init];
         for (NSDictionary *tmpDictionary in JSON) {
             
-            Post *tmpPost = [[Post alloc] initWithDictionary:tmpDictionary];
+            Post *tmpPost = [[Post alloc] initForIndex:tmpDictionary];
             [tmpPosts addObject:tmpPost];
         }
         NSArray *posts = [[NSArray alloc] initWithArray:tmpPosts];
         [[NSNotificationCenter defaultCenter]
-         postNotificationName:@"initWithJSONFinishedLoading"
+         postNotificationName:@"initWithPostIndexJSONFinishedLoading"
          object:posts];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
++(void)getPostShow:(NSNumber *)idNo {
+    NSString *postShowURL = [[[postURL stringByAppendingString:@"/"]
+                                       stringByAppendingString:[idNo stringValue]]
+                                       stringByAppendingString:@".json"];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:postShowURL parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+        
+        Post *post = [[Post alloc] initForShow:JSON];
+        
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"initWithPostShowJSONFinishedLoading"
+                       object:post];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);

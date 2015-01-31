@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "PostsTableViewController.h"
+#import "ArtViewController.h"
+#import "LinkViewController.h"
+#import "Util.h"
 
 @interface AppDelegate ()
 
@@ -20,15 +23,23 @@
     // Override point for customization after application launch.
 
     PostsTableViewController *postsTableViewController = [[PostsTableViewController alloc] initWithStyle:UITableViewStylePlain];
-//    postsTableViewController.title = @"Blog";
+    postsTableViewController.title = @"Blog";
+    postsTableViewController.tabBarItem.image = [UIImage imageNamed:@"blog_icon"];
+    UINavigationController *postNavController = [[UINavigationController alloc] initWithRootViewController:postsTableViewController];
     
-//    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-//    [tabBarController setViewControllers:@[postsTableViewController]];
+    ArtViewController *artViewController = [[ArtViewController alloc] init];
+    artViewController.title = @"Art";
+    UINavigationController *artNavController = [[UINavigationController alloc] initWithRootViewController:artViewController];
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:postsTableViewController];
+    LinkViewController *linkViewController = [[LinkViewController alloc] init];
+    linkViewController.title = @"Links";
+    UINavigationController *linksNavController = [[UINavigationController alloc] initWithRootViewController:linkViewController];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    [tabBarController setViewControllers:@[postNavController, artNavController, linksNavController]];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = navController;
-//    [self.window addSubview:tabBarController];
+    self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     
     return YES;

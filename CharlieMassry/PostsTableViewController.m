@@ -10,6 +10,9 @@
 #import "PostViewController.h"
 #import "Post.h"
 #import "PostClient.h"
+#import "Util.h"
+
+
 
 @interface PostsTableViewController ()
 
@@ -23,8 +26,8 @@
     [[NSNotificationCenter defaultCenter]
         addObserver:self
            selector:@selector(dataRetrieved:)
-               name:@"initWithJSONFinishedLoading"
-             object:self.posts];
+               name:@"initWithPostIndexJSONFinishedLoading"
+             object:nil];
     
 
     // Uncomment the following line to preserve selection between presentations.
@@ -66,10 +69,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-
-        
     }
-    cell.textLabel.text = [self.posts[indexPath.row] heading];
+    cell.textLabel.text = [self.posts[indexPath.row] title];
+    cell.textLabel.textColor = [Util primaryColor];
     // Configure the cell...
     return cell;
 }
@@ -84,6 +86,7 @@
 -(void)dataRetrieved:(NSNotification *)retrievedPosts;
 {
     self.posts = [retrievedPosts object];
+    NSLog(@"%@", self.posts);
     [self.tableView reloadData];
 }
 

@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface PostClient : NSObject
-@property (strong, nonatomic) NSArray *posts;
 +(void)getPostIndex;
++(void)getPostShow:(NSNumber *)idNo;
 @end

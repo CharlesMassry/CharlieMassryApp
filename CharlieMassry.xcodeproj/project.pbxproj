@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3509134C1A7B165600D045B7 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 3509134B1A7B165600D045B7 /* Util.m */; };
 		35340B4C1A521F390021D27E /* PostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35340B4B1A521F390021D27E /* PostsTableViewController.m */; };
 		35340B4F1A5222290021D27E /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35340B4E1A5222290021D27E /* PostViewController.m */; };
 		3534B1461A4F65460058C09B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3534B1451A4F65460058C09B /* main.m */; };
@@ -36,6 +37,8 @@
 		353A84921A538D7C00668DD6 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A84911A538D7C00668DD6 /* Post.m */; };
 		35C4B7661A73278900F50AF2 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C4B7651A73278900F50AF2 /* Comment.m */; };
 		35CF46091A6CB6DC0032C26E /* PostClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CF46081A6CB6DC0032C26E /* PostClient.m */; };
+		35E7DBEC1A7C9E17007FD49A /* ArtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E7DBEB1A7C9E17007FD49A /* ArtViewController.m */; };
+		35E7DBEF1A7C9F28007FD49A /* LinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E7DBEE1A7C9F28007FD49A /* LinkViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3509134A1A7B165600D045B7 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		3509134B1A7B165600D045B7 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		35340B4A1A521F390021D27E /* PostsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsTableViewController.h; sourceTree = "<group>"; };
 		35340B4B1A521F390021D27E /* PostsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsTableViewController.m; sourceTree = "<group>"; };
 		35340B4D1A5222290021D27E /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
@@ -108,6 +113,10 @@
 		35C4B7651A73278900F50AF2 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		35CF46071A6CB6DC0032C26E /* PostClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostClient.h; sourceTree = "<group>"; };
 		35CF46081A6CB6DC0032C26E /* PostClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostClient.m; sourceTree = "<group>"; };
+		35E7DBEA1A7C9E17007FD49A /* ArtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtViewController.h; sourceTree = "<group>"; };
+		35E7DBEB1A7C9E17007FD49A /* ArtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtViewController.m; sourceTree = "<group>"; };
+		35E7DBED1A7C9F28007FD49A /* LinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkViewController.h; sourceTree = "<group>"; };
+		35E7DBEE1A7C9F28007FD49A /* LinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +165,8 @@
 				3558B47E1A733D23000AAE5D /* Models */,
 				3534B1471A4F65460058C09B /* AppDelegate.h */,
 				3534B1481A4F65460058C09B /* AppDelegate.m */,
+				3509134A1A7B165600D045B7 /* Util.h */,
+				3509134B1A7B165600D045B7 /* Util.m */,
 				3534B14D1A4F65460058C09B /* Main.storyboard */,
 				3534B1501A4F65460058C09B /* Images.xcassets */,
 				3534B1521A4F65460058C09B /* LaunchScreen.xib */,
@@ -260,6 +271,10 @@
 				35340B4B1A521F390021D27E /* PostsTableViewController.m */,
 				35340B4D1A5222290021D27E /* PostViewController.h */,
 				35340B4E1A5222290021D27E /* PostViewController.m */,
+				35E7DBEA1A7C9E17007FD49A /* ArtViewController.h */,
+				35E7DBEB1A7C9E17007FD49A /* ArtViewController.m */,
+				35E7DBED1A7C9F28007FD49A /* LinkViewController.h */,
+				35E7DBEE1A7C9F28007FD49A /* LinkViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -376,16 +391,19 @@
 				3534B18F1A4F65770058C09B /* AFHTTPRequestOperation.m in Sources */,
 				3534B19C1A4F65770058C09B /* UIImageView+AFNetworking.m in Sources */,
 				3534B14C1A4F65460058C09B /* ViewController.m in Sources */,
+				35E7DBEC1A7C9E17007FD49A /* ArtViewController.m in Sources */,
 				35340B4C1A521F390021D27E /* PostsTableViewController.m in Sources */,
 				3534B1901A4F65770058C09B /* AFHTTPRequestOperationManager.m in Sources */,
 				3534B19D1A4F65770058C09B /* UIProgressView+AFNetworking.m in Sources */,
 				3534B1921A4F65770058C09B /* AFNetworkReachabilityManager.m in Sources */,
+				35E7DBEF1A7C9F28007FD49A /* LinkViewController.m in Sources */,
 				3534B1961A4F65770058C09B /* AFURLResponseSerialization.m in Sources */,
 				35340B4F1A5222290021D27E /* PostViewController.m in Sources */,
 				3534B1941A4F65770058C09B /* AFURLConnectionOperation.m in Sources */,
 				3534B19B1A4F65770058C09B /* UIButton+AFNetworking.m in Sources */,
 				3534B1991A4F65770058C09B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3534B1931A4F65770058C09B /* AFSecurityPolicy.m in Sources */,
+				3509134C1A7B165600D045B7 /* Util.m in Sources */,
 				35C4B7661A73278900F50AF2 /* Comment.m in Sources */,
 				3534B19E1A4F65770058C09B /* UIRefreshControl+AFNetworking.m in Sources */,
 				3534B19F1A4F65770058C09B /* UIWebView+AFNetworking.m in Sources */,
