@@ -19,18 +19,22 @@
 
 -(instancetype)initForIndex:(NSDictionary *)json {
     self = [super init];
-    self.title = json[@"title"];
-    self.text = json[@"text"];
-    self.idNo = json[@"id"];
+    if (self) {
+        self.title = json[@"title"];
+        self.text = json[@"text"];
+        self.idNo = json[@"id"];
+    }
     return self;
 }
 
 -(instancetype)initForShow:(NSDictionary *)json {
     self = [super init];
-    self.title = json[@"title"];
-    self.text = json[@"text"];
-    self.idNo = json[@"id"];
-    self.comments = [self createComments:json[@"comments"]];
+    if (self) {
+        self.title = json[@"title"];
+        self.text = json[@"text"];
+        self.idNo = json[@"id"];
+        self.comments = [self createComments:json[@"comments"]];
+    }
     return self;
 }
 

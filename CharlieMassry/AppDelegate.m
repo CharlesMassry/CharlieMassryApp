@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "PostsTableViewController.h"
 #import "ArtViewController.h"
-#import "LinkViewController.h"
+#import "LinksViewController.h"
 #import "Util.h"
 
 @interface AppDelegate ()
@@ -27,11 +27,11 @@
     postsTableViewController.tabBarItem.image = [UIImage imageNamed:@"blog_icon"];
     UINavigationController *postNavController = [[UINavigationController alloc] initWithRootViewController:postsTableViewController];
     
-    ArtViewController *artViewController = [[ArtViewController alloc] init];
+    ArtViewController *artViewController = [[ArtViewController alloc] initWithNibName:@"ArtViewController" bundle:nil];
     artViewController.title = @"Art";
     UINavigationController *artNavController = [[UINavigationController alloc] initWithRootViewController:artViewController];
     
-    LinkViewController *linkViewController = [[LinkViewController alloc] init];
+    LinksViewController *linkViewController = [[LinksViewController alloc] initWithNibName:@"LinksViewController" bundle:nil];
     linkViewController.title = @"Links";
     UINavigationController *linksNavController = [[UINavigationController alloc] initWithRootViewController:linkViewController];
     

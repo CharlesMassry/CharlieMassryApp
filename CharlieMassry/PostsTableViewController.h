@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PostsTableViewController : UITableViewController
-@property (strong, nonatomic) NSArray *posts;
+
 @end

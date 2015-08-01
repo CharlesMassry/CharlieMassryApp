@@ -9,25 +9,24 @@
 #import "PostsTableViewController.h"
 #import "PostViewController.h"
 #import "Post.h"
-#import "PostClient.h"
+#import "APIClient.h"
 #import "Util.h"
 
 
 
 @interface PostsTableViewController ()
-
+@property (strong, nonatomic) NSArray *posts;
 @end
 
 @implementation PostsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [PostClient getPostIndex];
-    [[NSNotificationCenter defaultCenter]
-        addObserver:self
-           selector:@selector(dataRetrieved:)
-               name:@"initWithPostIndexJSONFinishedLoading"
-             object:nil];
+    [APIClient getPostIndexWithCompletionBlock:^(NSArray *posts, NSError *error){
+        self.posts = posts;
+        [self.tableView reloadData];
+    }];
+    
     
 
     // Uncomment the following line to preserve selection between presentations.
@@ -81,13 +80,6 @@
     PostViewController *postVC = [[PostViewController alloc] init];
     postVC.post = self.posts[indexPath.row];
     [self.navigationController pushViewController:postVC animated:YES];
-}
-
--(void)dataRetrieved:(NSNotification *)retrievedPosts;
-{
-    self.posts = [retrievedPosts object];
-    NSLog(@"%@", self.posts);
-    [self.tableView reloadData];
 }
 
 /*

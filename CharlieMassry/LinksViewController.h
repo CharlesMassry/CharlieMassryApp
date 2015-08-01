@@ -1,5 +1,5 @@
 //
-//  LinkViewController.h
+//  LinksViewController.h
 //  CharlieMassry
 //
 //  Created by Charlie Massry on 7/31/15.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Link.h"
 
-@interface LinkViewController : UIViewController
--(instancetype)initWithLink:(Link *)link;
+@interface LinksViewController : UICollectionViewController
+
 @end

@@ -1,5 +1,5 @@
 //
-//  ArtViewController.h
+//  ArtViewCell.h
 //  CharlieMassry
 //
 //  Created by Charlie Massry on 7/29/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ArtViewController : UICollectionViewController
-
+@interface ArtViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailView;
 @end
